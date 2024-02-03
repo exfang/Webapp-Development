@@ -32,3 +32,7 @@ Password: Staffpassword
 - Andrew --> Account Management, Accounts Permission to Navigations
 - Akira --> Transaction Processing 
 - Skye --> Customer Support 
+
+
+Acknowledgement:
+Thanks Shermaine for writing a comprehensive description of the project and maintaining it!
