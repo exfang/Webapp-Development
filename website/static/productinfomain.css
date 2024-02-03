@@ -1,0 +1,30 @@
+.productinfopara{
+font-size: 40px;
+padding-left:80px;
+padding-bottom:300px;
+color: #FFA62F;
+
+}
+
+.account_basics_hover:hover {
+    color: #FFA62F;
+}
+
+.product_title{
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    padding-top: 90px;
+
+}
+.acc_title_24 {
+font-size: 40px;
+padding-left:80px;
+text-decoration: underline;
+}
+
+.acc_title_34 {
+font-size:40px;
+padding-left:80px;
+text-decoration: underline;
+}

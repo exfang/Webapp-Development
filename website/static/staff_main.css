@@ -1,0 +1,331 @@
+/* common staff config, copy into other staff css files pls*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --backgroud: #C5D8E9;
+    --buttons:#0F4C81;
+    --white: #FFFFFF;
+    --black: #000000;
+    --darko: #CE7206;
+    --orange: #FEB968;
+    --dark-bgd: #B2D1ED;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/*start of staff nav*/
+
+.stf-container{
+    position: relative;
+    width: 100%;
+}
+.stf-navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--backgroud);
+    border-left: 10px solid var(--backgroud);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.stf-navigation.active{
+    width: 80px;
+}
+.stf-navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.stf-navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.stf-navigation ul li:hover,
+.stf-navigation ul li.hovered{
+  background: var(--dark-bgd);  
+}
+.stf-navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.stf-navigation ul li a, .stf-navigation ul li .dropdown-btn{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--black);
+}
+.stf-navigation ul li:hover a,
+.stf-navigation ul li.hovered a,
+.stf-navigation ul li:hover .dropdown-btn,
+.stf-navigation ul li.hovered .dropdown-btn{
+    color: var(--darko);
+}
+.stf-navigation ul li a .icon, .stf-navigation ul li .dropdown-btn .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 80px;
+    text-align: center;
+}
+.stf-navigation ul li a .icon img{
+    width:60px;
+    height:60px;
+}
+.stf-navigation ul li a .icon ion-icon, .stf-navigation ul li .dropdown-btn .icon ion-icon{
+    font-size: 1.75em;
+}
+.stf-navigation ul li a .title, .stf-navigation ul li .dropdown-btn .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.stf-navigation ul li:nth-child(1) a .title{
+    top: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+.stf-navigation ul li:hover a::before,
+.stf-navigation ul li.hovered a::before, 
+.stf-navigation ul li:hover .dropdown-btn::before,
+.stf-navigation ul li.hovered .dropdown-btn::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--dark-bgd);
+    pointer-events: none;
+}
+.stf-navigation ul li:hover a::after,
+.stf-navigation ul li.hovered a::after,
+.stf-navigation ul li:hover .dropdown-btn::after,
+.stf-navigation ul li.hovered .dropdown-btn::after{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--dark-bgd);
+    pointer-events: none;
+}
+.stf-title{
+    position: relative;
+    left:20px;
+}
+.stf-main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+.stf-main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.stf-topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;  
+}
+.stf-toggle{
+    position:relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+.stf-search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.stf-search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    background: #333;
+    color: white;
+    border: 1px solid #333;
+}
+.stf-search label ion-icon{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 1.5em;
+    color: white;
+}
+.stf-user{
+    position: relative;
+    font-size: 1.7em;
+    width: 38px;
+    height: 38px;
+    background: #333;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    right: 10px;
+}
+
+.dropdown-btn {
+    border: none;
+    background: none;
+    width:100%;
+    cursor: pointer;
+    outline: none;
+    top: 0;
+  }
+  .drop_active {
+    color: white;
+  }
+  .dropdown-container {
+    display: none;
+    padding-left: 3.5rem;
+    margin-top: -1rem;
+  }
+  .dropdown-container a{
+    margin-top: .5rem;
+    text-decoration: underline;
+    font-size: 1.1rem;
+  }
+  .dropdown-container a:hover{
+    color: #0F4C81;
+  }
+/*end of staff nav*/
+
+li.showMenu .sub-menu{
+    display: block;
+  }
+li .sub-menu a{
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+li .sub-menu a:hover{
+    opacity: 1;
+  }
+li .sub-menu.blank{
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+  }
+li:hover .sub-menu.blank{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+li.showMenu i.arrow{
+    transform: rotate(-180deg);
+  }
+i.arrow{
+    display: none;
+}
+.footer-content{
+    background-color: #C5D8E9;
+    padding: 0px 0 20px 0;
+    margin-left: -5em;
+    bottom: 0;
+    width: 115%;
+}
+.copyright{
+    text-align: center;
+    color: var(--black-color);
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 15px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+/*responsive*/
+@media (max-width: 991px)
+{
+    .stf-navigation
+    {
+        left: -300px;
+    }
+    .stf-navigation.active
+    {
+        width: 300px;
+        left: 0;
+    }
+    .stf-main
+    {
+        width: 100%;
+        left: 0;
+    }
+    .stf-main.active
+    {
+        left: 300px; 
+    }
+    .stf-cardBox
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 767px)
+{
+    .stf-navigation
+    {
+        left: -300px;
+    }
+    .stf-navigation.active
+    {
+        width: 300px;
+        left: 0;
+    }
+    .stf-main
+    {
+        width: 100%;
+        left: 0;
+    }
+    .stf-main.active
+    {
+        left: 300px; 
+    }
+    .stf-cardBox
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

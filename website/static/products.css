@@ -1,0 +1,124 @@
+.backgrdd{
+    background: #C5D8E9;
+    display: block;
+    justify-content: center;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 5px darkgray;
+} 
+
+h1{
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    display: block;
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    border:.2rem solid #0F4C81;
+    font-size: 1.3rem;
+    color:#fff;
+    cursor: pointer;
+    background:#0F4C81;
+    margin-bottom: 2rem;
+    margin-left: 20%;
+}
+.btn:hover{
+    background:var(--orange);
+    color: var(--black-color);
+    border:.2rem solid var(--orange);
+}
+
+.form-control{
+    width: 80% !important;
+    font-size: 1rem;
+    align-content: center !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.form-group{
+    font-size: 1.2rem;
+    display: block;
+    justify-content: center;
+    padding-left: 20%;
+}
+
+td .btn_up{
+    font-size: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    border:.2rem solid var(--orange);
+    color: black;
+    cursor: pointer;
+    background: var(--orange);
+    margin-bottom: 2rem;
+    margin-left: 20%;
+    padding: 5px;
+    text-decoration: none;
+}
+
+td .btn_del{
+    font-size: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    border:.2rem solid rgb(239, 67, 67);
+    color:#fff;
+    cursor: pointer;
+    background: rgb(239, 67, 67);
+    margin-bottom: 2rem;
+    margin-left: 20%;
+    padding: 5px;
+}
+
+td .btn_up:hover, 
+td .btn_del:hover{
+    background: #0F4C81;
+    color: white;
+    border:.2rem solid #0F4C81;
+}
+
+.prod_table {
+    font-size: 1.1rem;
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.prod_table thead tr {
+    background-color: #0F4C81;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+.prod_table th,
+.prod_table td {
+  padding: 0 18px;
+}
+
+.prod_table tbody tr {
+    background-color: #fff;
+}
+
+.prod_table tbody tr:nth-of-type(even) {
+    background-color: #dce7f0;
+  }
+
+.prod_table tbody tr:last-of-type {
+    border-bottom: 2px solid #0F4C81;
+}
+
+  

@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='account_details.css') }}">{% endblock %}
+{% block title %}Payment Details | The Hoop Llab{% endblock %}
+
+{% block content %}
+{% if 'user_updated' in session %}
+    <div class="alert alert-warning alert-dismissible custom_design">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2>{{ session.pop('user_updated', None) }}</h2>
+    </div>
+{% endif %}
+
+<div class='signup'>
+    <div class="signup_bg">
+    {% from "includes/add_ProdForm.html" import render_field %}
+        <h1 class="display-4">Payment Details</h1>
+
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.name_on_card, class="form-control capitalize") }}
+            </div>
+                <div class="form-group">
+                {{ render_field(form.card_number, class="form-control") }}
+                <h3>Only accepts card with 13-19 digits</h3>
+            </div>
+            <div class="form-group">
+                {{ render_field(form.cvv, class="form-control") }}
+                <h3>Only accepts CVV with 3 to 4 characters</h3>
+            </div>
+            <div class="form-group">
+                {{ render_field(form.expiry, class="form-control") }}
+            </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="flashes">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <input type="submit" value="Move to Payment" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

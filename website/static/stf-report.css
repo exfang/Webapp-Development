@@ -1,0 +1,240 @@
+/*start of staff main*/
+.stf-cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.stf-graphbox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 2fr 1fr);
+    grid-gap: 20px;
+    margin-bottom: 3rem;
+}
+
+.stf-prodbox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr 1fr);
+    grid-gap: 20px;
+    height: 38rem;
+}
+
+.stf-prodbox2{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-gap: 20px;
+}
+
+.stf-cardBox .stf-card, .stf-graphbox .stf-card, .stf-prodbox .stf-card, .stf-prodbox2 .stf-card{
+    position: relative;
+    background: #ffc397;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 15px rgba(0,0,0,0.8);
+}
+.stf-cardBox .stf-card .stf-numbers{
+   position: relative; 
+   font-weight: 500;
+   font-size: 2.5em;
+   color: black;
+}
+.stf-cardBox .stf-card .stf-cardName{
+    font-size: 1.1em;
+    color: black;
+    margin-top: 5px;
+}
+.stf-cardBox .stf-card .stf-iconBx{
+    font-size: 3em;
+    color: black;
+}
+.stf-cardBox .stf-card:hover, .stf-graphbox .stf-card:hover, .stf-prodbox .stf-card:hover, .stf-prodbox2 .stf-card:hover{
+    border: #ffc397 2px solid;
+    box-shadow: none;
+}
+
+.stfTrans_table{
+    margin: 25px auto;
+    font-size: .8rem;
+    border-collapse: collapse;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    display:block;
+    max-height:30rem;
+    overflow-y:scroll;
+}
+
+.prod_table{
+    font-size: .8rem;
+    border-collapse: collapse;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    display:block;
+    max-height:28rem;
+    overflow-y:scroll;
+}
+
+.stfTrans_table thead tr, .prod_table thead tr {
+    background-color: #aec6cf;
+    color: black;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+.stfTrans_table th, .stfTrans_table td, 
+.prod_table th, .prod_table td {
+  padding: 0 10px;
+}
+
+.stfTrans_table tbody tr, .prod_table tbody tr {
+    background-color: #fff;
+    font-size: 1.1rem;
+}
+
+.stfTrans_table tbody tr:nth-of-type(even) {
+    background-color: #dce7f0;
+  }
+
+.stfTrans_table tbody tr:last-of-type, .prod_table tbody tr:last-of-type {
+    border-bottom: 2px solid #aec6cf;
+}
+
+.stfTrans_table button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 0;
+}
+
+.prod_table button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: .3rem;
+    font-weight: bold;
+    padding: 0;
+}
+
+.center-alignn{
+    text-align: center;
+    margin-left: 2rem;
+}
+.top_prod {
+    margin-top: 1rem;
+    /* margin-left: 2.2rem; */
+}
+.cat_sales{
+    margin:auto;
+    margin-left: 8rem;
+}
+.daily_traffic{
+    margin:auto;
+    padding-top: 2.5rem;
+    margin-left: 4.5rem;
+}
+/* Andrew's welcome alert css. */
+.close{
+    font-size: 2.5rem;
+}
+
+.custom_design {
+    background: #CAEEC2;
+    width: 30%;
+    margin: auto;
+    border-radius:25px;
+    border: 1px solid #CAEEC2;
+    margin-top: 1rem;
+    color: black;
+}
+/*end of Andrew's welcome alert css.*/
+
+.stf-card .title{
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: black;
+}
+
+.stf-card .title a {
+    /*color: #0F4C81;*/
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-left: 2rem;
+}
+
+.regular{
+    font-size: 1.1rem;
+    border-collapse: collapse;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 480px)
+{
+    .stf-cardBox, .stf-graphbox, .stf-prodbox
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .stf-user
+    {
+        min-width: 40px;
+    }
+    .stf-navigation{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .stf-navigation.active{
+        left: 0;
+        width: 100%;
+    }
+    .stf-toggle
+    {
+        z-index: 1001;
+    }
+}
+
+@media (max-width: 991px)
+{
+    .stf-cardBox,.stf-graphbox,.stf-prodbox
+    {
+        grid-template-columns: repeat(1fr, 1fr);
+    }
+    .stf-prodbox2{
+        margin-top: 36.5rem;
+    }
+}
+@media (max-width: 767px)
+{
+    .stf-cardBox
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='forgot_acc.css') }}">
+{% endblock %}
+{% block title %}Charged after order cancellation
+{% block content %}
+
+<h1 class="forgotacc16_title">Charged after cancelling order</h1>
+<hr><br>
+<h2 class="acc_title16_2">Payment Mangement:</h2>
+
+<p class = " account_para16">
+    1. Please give up to 24hours for the refund to be sent back to your account <br><br><br>
+   2.  If there is still no refund, please email or phone us
+      </p>
+<hr>
+<br>
+
+<style>
+    .account_para16{
+    font-size: 30px;
+    padding:30px;
+    margin-bottom:200px;
+    }
+
+.forgotacc16_title{
+font-size:40px;
+padding:15px;
+text-align:center;
+}
+
+    .acc_title16_2 {
+font-size: 35px;
+padding-left:50px;
+margin-bottom:30px;
+text-decoration: underline;
+}
+
+
+</style>
+
+    {# endfor #}
+
+
+{% endblock %}

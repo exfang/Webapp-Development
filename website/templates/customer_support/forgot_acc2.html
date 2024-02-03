@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='forgot_acc.css') }}">
+{% endblock %}
+{% block title %}Password incorrect/ Acc does not exist{% endblock %}
+
+{% block content %}
+
+<h1 class="forgotacc2_title">Your Password is Incorrect/Account does not exist</h1>
+<hr><br>
+<h2 class="acc_title2_2">Log-in Help:</h2>
+
+<p class = " account_para2">
+    1. Go to Password reset and follow the instructions stated there<br><br><br>
+   2.  Search every email account you use for the word "Hoopllab" to find any emails we've sent you.<br><br><br>
+    3. Enter all email addresses you use into our password reset form. If the email address you entered is associated with a Hoopllab account, you’ll receive an email with further details.<br><br><br>
+4. If still unable to receive any email address or the following below does not work, please email or contact us
+      </p>
+<hr>
+<br>
+
+<style>
+    .account_para2{
+    font-size: 30px;
+    padding:30px;
+    margin-bottom:200px;
+    }
+
+.forgotacc2_title{
+font-size:40px;
+padding:15px;
+text-align:center;
+}
+
+    .acc_title2_2 {
+font-size: 35px;
+padding-left:50px;
+margin-bottom:30px;
+text-decoration: underline;
+}
+
+
+</style>
+
+    {# endfor #}
+
+
+{% endblock %}

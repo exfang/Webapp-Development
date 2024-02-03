@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='forgot_acc.css') }}">
+{% endblock %}
+{% block title %}Warranty{% endblock %}
+
+{% block content %}
+
+<h1 class="forgotacc32_title">What is in Hoopllab's Product Warranty </h1>
+<hr><br>
+<h2 class="acc_title32_2">Product Information:</h2>
+
+<p class = " account_para32">
+    1. If your item is potentially defective or faulty, and it's been less than 5 days since your Hoopllab's purchase, simply return the item. If it's been more than 5 days since your purchase, please call us to return the item.<br><br><br>
+
+      </p>
+<hr>
+<br>
+
+<style>
+    .account_para32{
+    font-size: 30px;
+    padding:30px;
+    margin-bottom:200px;
+    }
+
+.forgotacc32_title{
+font-size:40px;
+padding:15px;
+text-align:center;
+}
+
+    .acc_title32_2 {
+font-size: 35px;
+padding-left:50px;
+margin-bottom:30px;
+text-decoration: underline;
+}
+
+
+</style>
+
+    {# endfor #}
+
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='customersupportmain.css') }}"/>
+{% endblock %}
+{% block title %}Customer Support Main{% endblock %}
+
+{% block content %}
+<h1 class="customer_title123">Contact Customer Support</h1>
+<div>
+        {# for () in () #}
+
+          <div class="img-container1232">
+              <a href ="Accountbasicsmain">
+          <img src="./static/images/Accountbasics.png" alt="nthhh" style="width:32%">
+                  </a>
+              <div class = "logo123">
+              <p>Account Basics</p>
+              </div>
+          </div>
+
+
+          <div class="img-container3123">
+              <a href ="billingmain">
+          <img src="./static/images/Billing.png" alt="nthhh" style="width:30%">
+                  </a>
+              <p>Billing & Payment</p>
+          </div>
+
+
+
+
+          <div class="img-container2123">
+              <a href ="deliverymain">
+          <img src="./static/images/Delivery.png" alt="nthhh" style="width:30%">
+                  </a>
+              <p>Shipping & Delivery</p>
+          </div>
+
+          <div class="img-container4123">
+              <a href ="productinfomain">
+          <img src="./static/images/productinfo.png" alt="nthhh" style="width:30%">
+                  </a>
+              <p>Product Information</p>
+          </div>
+
+
+
+            <div class = "unable_find_ans123">
+                <p class = "bold_title_cus1">Unable to find your answer?</p>
+                <p>Please contact us by either of the</p>
+                <p>following below and we will get back</p>
+                <p>to you very soon</p>
+            </div>
+
+                <div class="site-branding">
+                  <div class="site-branding-logo">
+                    <img src="./static/images/phone-sup.png" alt="" />
+                  </div>
+                </div>
+                <div class="site-branding-text123">
+                  <h1 id="site-title">+65 8807 1415 <br> 10:00 - 19:00 <br> Monday - Friday</h1>
+
+                </div>
+
+ <div class="site-branding2">
+                  <div class="site-branding-logo2">
+                    <img src="./static/images/email-sup.png" alt="" style="width:15%" />
+                  </div>
+                </div>
+                <div class="site-branding-text2123">
+                  <h1 id="site-title2">thehoopllab@gmail.com</h1>
+
+                </div>
+
+
+    {# endfor #}
+
+</div>
+{% endblock %}

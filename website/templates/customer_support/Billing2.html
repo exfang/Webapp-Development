@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='forgot_acc.css') }}">
+{% endblock %}
+{% block title %}Hoopllab Discounts{% endblock %}
+
+{% block content %}
+
+<h1 class="forgotacc12_title">Does Hoopllab Offer Discounts?</h1>
+<hr><br>
+<h2 class="acc_title12_2">Billing:</h2>
+
+<p class = " account_para12">
+    1. Hoopllab does offer seasonal discounts which you can find at the top of the home page which shows the promo code you can use<br><br><br>
+      </p>
+<hr>
+<br>
+
+<style>
+    .account_para12{
+    font-size: 30px;
+    padding:30px;
+    margin-bottom:200px;
+    }
+
+.forgotacc12_title{
+font-size:40px;
+padding:15px;
+text-align:center;
+}
+
+    .acc_title12_2 {
+font-size: 35px;
+padding-left:50px;
+margin-bottom:30px;
+text-decoration: underline;
+}
+
+
+</style>
+
+    {# endfor #}
+
+
+{% endblock %}

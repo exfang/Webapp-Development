@@ -1,0 +1,32 @@
+<!-- check if they are a logged in (only put this if allow both accounts only) -->
+{% if session['acc_type'] == "Customer" or session['acc_type'] == "Staff" %}
+    <!-- Since they are logged in, check their acc type to determine nav bar -->
+    {% if session['acc_type'] == "Customer" %}
+        {% extends "base.html" %}
+    {% elif session['acc_type'] == "Staff" %}
+        {% extends "staff_base.html" %}
+
+    {% block content %}
+    <!-- add your content here -->
+    {% endblock %}
+<!-- if they are guests (those w/o acc) change the url to login required sites, redirect them to? -->
+{% else %}
+<!-- redirect the guests to another page -->
+{% include 'home.html' %}
+{% endif %}
+
+
+
+
+<!-- if your page allows only staff, follow this template -->
+{% if session['acc_type'] == "Staff" %}
+    {% extends "staff_base.html" %}
+
+    {% block content %}
+    <!-- add your content here -->
+    {% endblock %}
+<!-- if they are guests/customers change the url to login required sites, redirect them to? -->
+{% else %}
+<!-- redirect the guests to another page -->
+{% include 'home.html' %}
+{% endif %}

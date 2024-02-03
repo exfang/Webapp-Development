@@ -1,0 +1,117 @@
+<div class = "stf-container">
+    <div class = "stf-navigation">
+        <ul>
+            <li>
+                <a href = "#">
+                    <span class = "icon"><img src = "{{ url_for('static', filename='images/Group 1.png') }}" alt = "logo"></span>
+                    <span class = "title">The Hoop Llab</span>
+                </a>
+            </li>
+            <li>
+                <button class="dropdown-btn">
+                    <span class = "icon"><ion-icon name="home-outline"></ion-icon></ion-icon></span>
+                    <span class = "title">Dashboard <i class="fa-solid fa-angle-down"></i></span>
+                </button>
+                  <div class="dropdown-container">
+                    <a href="/staff_report">Store Overview</a>
+                    <a href="/prod_report">Product Overview</a>
+                  </div>
+                <!--<a href = "#">
+                    <span class = "icon"><ion-icon name="home-outline"></ion-icon></ion-icon></span>
+                    <span class = "title">Dashboard <i class="fa-solid fa-angle-down"></i></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Dashboard</a></li>
+                    <li><a href="#">Store Overview</a></li>
+                    <li><a href="#">Product Overview</a></li>
+                  </ul>-->
+            </li>
+            <!--<li>
+                <button class="dropdown-btn">
+                    <span class = "icon"><ion-icon name="cart-outline"></ion-icon></ion-icon></span>
+                    <span class = "title">Products <i class="fa-solid fa-angle-down"></i></span>
+                </button>
+                  <div class="dropdown-container">
+                    <a href="#">Regular</a>
+                    <a href="#">Kids</a>
+                    <a href="#">Customised</a>
+                  </div>
+                <a href = "#">
+                    <span class = "icon"><ion-icon name="cart-outline"></ion-icon></ion-icon></span>
+                    <span class = "title">Products <i class="fa-solid fa-angle-down"></i></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Products</a></li>
+                    <li><a href="#">Indoor</a></li>
+                    <li><a href="#">Outdoor</a></li>
+                    <li><a href="#">Customised</a></li>
+                  </ul>-->
+            </li>
+            <li>
+                <button class="dropdown-btn">
+                    <span class = "icon"><ion-icon name="basketball-outline"></ion-icon></span>
+                    <span class = "title">Product Management <i class="fa-solid fa-angle-down"></i></span>
+                </button>
+                  <div class="dropdown-container">
+                    <a href="/Add-Product">Add Product</a>
+                    <a href="/EditProduct">Update/ Delete Product</a>
+                    <a href = "/add_promocode">Add Promotions</a>
+                  </div>
+                <!--<a href = "#">
+                    <span class = "icon"><ion-icon name="basketball-outline"></ion-icon></span>
+                    <span class = "title">Product Management <i class="fa-solid fa-angle-down"></i></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Product Management</a></li>
+                    <li><a href="#">Add Product</a></li>
+                    <li><a href="#">Update/ Delete Product</a></li>
+                  </ul>-->
+            </li>
+            <li>
+                <button class="dropdown-btn">
+                    <span class = "icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class = "title">Accounts <i class="fa-solid fa-angle-down"></i></span>
+                </button>
+                  <div class="dropdown-container">
+                    <a href="/deleteAccounts">Delete Accounts</a>
+                    <a href="/account_detail">Account Management</a>
+                  </div>
+                <!--<a href = "#">
+                    <span class = "icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class = "title">Accounts <i class="fa-solid fa-angle-down"></i></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Accounts</a></li>
+                    <li><a href="#">Delete Accounts</a></li>
+                    <li><a href="#">Account Management</a></li>
+                  </ul>-->
+            </li>
+            <li>
+                <a href = "#">
+                    <span class = "icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+                    <span class = "title">Customer Support</span>
+                </a>
+            </li>
+            <li>
+                <a href = "/logout">
+                    <span class = "icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class = "title">Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class = "stf-main">
+        <div class = "stf-topbar">
+            <div class = "stf-toggle">
+                <span class = "icon"><ion-icon name="menu-outline"></ion-icon></span>
+            </div>
+            <div class = "stf-search">
+                <label>
+                    <input type = "text" placeholder = "Search">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <div class = "stf-user">
+                <span class = "icon"><ion-icon name="person-outline"></ion-icon></span>
+        </div>
+    </div>

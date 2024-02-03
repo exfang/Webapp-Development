@@ -1,0 +1,51 @@
+<header id = "topnav">
+    <div class = "left">
+      <a href="/" class = "logo"><img src = "{{ url_for('static', filename='images/Group 1.png') }}" alt = ""></a>
+      <div class="dropdown">
+        <button class="dropbtn">Explore <i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="/View-RegularProducts">Regular</a>
+          <a href="/View-KidsProducts">Kids</a>
+          <a href="/View-CustomProducts">Customised</a>
+        </div>
+      </div>
+    </div>
+    <form action = "">
+      <input type = "search" id = "searh bar">
+      <label for "search-bar" class = "fas fa-search"></label>
+    </form>
+    <div class = "icons">
+      <div id = "menu-bar" class = "fas fa-bars"></div>
+      <div id = "menu-bar2" class = "fas fa-user"></div>
+      <a href = "/cartlist" class = "fas fa-shopping-cart"></a>
+    </div>
+</header>
+ <!-- side nav dashboard -->
+ <nav class = "navbar">
+    <div class = "user">
+      <img src = "{{ url_for('static', filename='images/Group 1.png') }}" alt = "">
+      <h3>{{ session['first_name'] }}</h3>
+    </div>
+    <div class = "links">
+      <a href = "/cust_report">Dashboard</a>
+      <a href = "/cust_trans">Transaction History</a>
+    </div>
+    <div id = "close" class = "fas fa-times"></div>
+  </nav>
+  <!-- end of side nav dashboard-->
+
+  <!-- side nav customer -->
+  <nav class = "navbar2">
+    <div class = "user2">
+      <img src = "{{ url_for('static', filename='images/Group 1.png') }}" alt = "">
+      <h3>{{ session['first_name'] }}</h3>
+    </div>
+    <div class = "links2">
+      <a href = "/account_detail">Account Details</a>
+      <a href = "/payment_detail">Payment Details</a>
+      <a href = "/delivery_detail">Delivery Address</a>
+      <a href = "/logout">Logout</a>
+    </div>
+    <div id = "close2" class = "fas fa-times"></div>
+  </nav>
+  <!-- end of side nav customer -->

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='billingmain.css') }}">
+{% endblock %}
+{% block title %}Payment & Billing{% endblock %}
+
+{% block content %}
+
+<h1 class="billing_title">Payment & Billing</h1>
+<hr><br>
+<h2 class="acc_title_22">Billing:</h2>
+
+<p class="billingpara">
+         <a href="billing1" class="account_basics_hover">Why was my payment declined?</a><br>
+        <a href="billing2" class="account_basics_hover">Does Hoopllab offer discounts?</a> <br>
+    <a href="billing3" class="account_basics_hover">How can i pay for Hoopllab's Products?</a><br>
+      </p>
+<hr>
+<br>
+<h2 class="acc_title_32">Manage payments:</h2><br>
+<p class="billingpara">
+    <a href="billing4" class="account_basics_hover">Can i get a refund from Hoopllab?</a><br>
+    <a href="billing5" class="account_basics_hover">How do i get a receipt?</a><br>
+    <a href="billing6" class="account_basics_hover">Why was i charged after i cancelled my order?</a><br>
+    <a href="billing7" class="account_basics_hover">How do i update my billing address?</a><br>
+</p>
+
+
+
+    {# endfor #}
+
+
+{% endblock %}

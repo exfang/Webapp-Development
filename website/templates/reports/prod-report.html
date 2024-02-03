@@ -1,0 +1,73 @@
+{% extends "staff_base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='stf-report.css') }}">
+{% endblock %}
+{% block title %}Staff | Product Report{% endblock %}
+
+{% block content %} 
+<div class = "stf-title">
+    <h1>Product Report</h1>
+  </div>
+
+  <div class = "stf-prodbox">
+     <div class = "stf-card">
+      <div>
+        <div class = "title">Low Stock Products</div>
+        <div>
+          <table class="prod_table">
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for product in products_list %}
+                {% if product.get_stock() <= 5 %}
+                <tr style ="background-color: #f76566; color: white">
+                {% elif product.get_stock() > 5 %}
+                <tr>
+                {% endif %}
+                    <td>{{ product.get_id() }}</td>
+                    <td>{{ product.get_name() }}</td>
+                    <td>{{ product.get_stock() }}</td>
+                    {% if product.get_stock() <= 5 %}
+                    <td><form action="{{url_for('delete_prod', id=product.get_id())}}" method="POST">
+                      <button><ion-icon name="close-circle-outline"></ion-icon></button>
+                    </form>
+                    </td>
+                    {% elif product.get_stock() > 5 %}
+                    <td></td>  
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>                    
+      </div>
+     </div>
+     <div class = "stf-card">
+      <div>
+        <div class = "title">Count of Orders by Category
+        </div>
+        <div class = "top_prod">
+          <img src="data:image/png;base64, {{ plotcat_url }}" height="400" width="450">
+        </div>
+      </div>
+    </div>
+</div>
+  <div class = "stf-prodbox2">
+    <div class = "stf-card">
+      <div>
+      <div class = "title">Top Products Sales <a href = "{{url_for('csv')}}"> <ion-icon name="download-outline"></ion-icon></a>
+      </div>
+      <div class = "cat_sales">
+        <img src="data:image/png;base64, {{ plot_url }}" height="500" width="550">
+      <div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='checkout.css') }}">
+{% endblock %}
+{% block title %}Payment{% endblock %}
+
+{% block content %}
+<h1 class="payment_title">Payment</h1>
+<div class = "whole-container">
+    <div>
+        {% for product in cart_list %}
+            <div class = "container_yes" id = "payment_container">
+                <div class = "daboxes" style = "width:100%">
+                    <div class = "img_in_payment">
+                        <img src = "{{ url_for('static', filename='images/'+ product.get_image())}}" height = "145rem" width = "180rem">
+                    </div>
+                    <div class = "details_in_payment">
+                        <p class = "name_in_payment">{{ product.get_name() }}</p>
+                        <p>{{ product.get_colors() }}</p>
+                        <p>{{ product.get_size() }}</p>
+                        <p>{{ product.get_category() }}</p>
+                        <p class = "price_in_payment">${{ product.get_price() }}</p>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+
+            {% from "includes/add_ProdForm.html" import render_field %}
+            <div class = "promocode-sect">
+                <form action ="" method="POST">
+                    <div class = "form-group">
+                        {{ render_field(form.pay_promo_code, class = "form-control") }}
+                    </div>
+                    <input type="submit" value="verify promo" class="btn1"/>
+                </form>
+            </div>
+        <hr>
+        <div class = "payment-container">
+                <pre> Subtotal:                     ${{ total }}</pre>
+                <pre> Shipping:                     ${{ shipping }}</pre>
+                <pre> Tax:                          ${{ tax  }}</pre>
+                <pre> Total:                        ${{ totaltotal }}</pre>
+            <form action="{{url_for('add_trans', total = totaltotal)}}" method="POST">
+                <button class = "btn2">
+                  Move to payment
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

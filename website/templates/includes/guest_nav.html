@@ -1,0 +1,21 @@
+<header id = "topnav">
+    <div class "left">
+      <a href="#" class = "logo"><img src = "{{ url_for('static', filename='images/Group 1.png') }}" alt = ""></a>
+      <div class="dropdown">
+        <button class="dropbtn">Explore <i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="/View-RegularProducts">Regular</a>
+          <a href="/View-KidsProducts">Kids</a>
+          <a href="/View-CustomProducts">Customised</a>
+        </div>
+      </div>
+    </div>
+    <form action = "">
+      <input type = "search" id = "searh bar">
+      <label for "search-bar" class = "fas fa-search"></label>
+    </form>
+    <div class = "guest">
+      <a href = "/login" class = "guest">Login</a>
+      <a href = "/signup" class = "guest">Sign Up</a>
+    </div>
+</header>

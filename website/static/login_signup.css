@@ -1,0 +1,129 @@
+.signup {
+    display: flex;
+    justify-content: center;
+}
+
+.capitalize {
+    text-transform: None
+}
+
+.signup_bg{
+    background: linear-gradient(135deg, #C5D8E9, #FEB968);
+    width:50%;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 5px darkgray;
+}
+
+.signup_image{
+    display: flex;
+    justify-content: center;
+    padding-right: 1.5rem;
+    padding-top: 2rem;
+}
+
+h1{
+    margin-bottom: 2rem;
+    padding-top: 0rem !important;
+    padding-bottom: 1rem !important;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.btn{
+    width: 64%;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    border:.4rem solid #0F4C81;
+    font-size: 1.7rem;
+    color:#fff;
+    cursor: pointer;
+    background:#0F4C81;
+    margin-left: 20%;
+}
+
+.btn:hover{
+    background:var(--orange);
+    color: var(--black-color);
+    border:.4rem solid var(--orange);
+}
+
+.form-control{
+    width: 80% !important;
+    font-size: 2rem !important;
+}
+
+.form-group{
+    font-size: 2rem !important;
+    padding-left: 20%;
+}
+
+.form-signup{
+    text-align: center;
+    font-size: 1.5rem !important;
+    padding-left: 4%;
+    margin-bottom: 2rem;
+    margin-top: -1.2rem;
+}
+
+.form-forgot-password{
+    font-size: 1.5rem !important;
+    padding-left: 20%;
+}
+
+/* .flashes {
+    text-align: center;
+    font-size: 1.9rem !important;
+    color: black;
+    background: #90EE90;
+    width: 40%;
+    border-radius: 20px;
+    margin: auto;
+} */
+
+.flashes {
+    background: #CAEEC2;
+    width: 45%;
+    margin: auto;
+    text-align: center;
+    border-radius:25px;
+    font-size: 1.9rem !important;
+    border: 1px solid #CAEEC2;
+    margin-top: 1rem;
+    color: red;
+}
+
+.flash {
+    text-align: center;
+    font-size: 1.5rem;
+    color: red;
+}
+
+account_detail_subtexts {
+    text-align: center;
+}
+
+.close{
+    font-size: 2.5rem;
+}
+
+.custom_design {
+    background: #CAEEC2;
+    width: 30%;
+    margin: auto;
+    border-radius:25px;
+    border: 1px solid #CAEEC2;
+    margin-top: 1rem;
+    color: black;
+}
+
+@media only screen and (max-width: 1000px) {
+  .signup_bg{
+    width:90%;
+    margin-bottom: 3rem;
+    margin-top: 9rem;
+    border-radius: 1rem;
+    padding-bottom: 2rem;
+}
+}

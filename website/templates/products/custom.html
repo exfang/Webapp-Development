@@ -1,0 +1,39 @@
+<!--only guest & cust can access -->
+{% if session['acc_type'] == "Customer" %}
+{% extends "base.html" %}
+{% else %}
+{% extends "guest_base.html" %}
+{% endif %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='products.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='prod_display.css') }}">
+<link rel = "stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+{% endblock %}
+{% block title %}Staff | Custom Basketballs {% endblock %}
+
+{% block content %} 
+<div class="prod_container">
+   {% for product in products_list %}
+   {% if product.get_category() == "C" %}
+   <div class = "prod_box">
+    <div class = "prod_img">
+      <img src = "{{ url_for('static', filename='images/'+ product.get_image())}}" class="img-responsive">
+    </div>
+    <div class = "product_info">
+      <h3 class = "product_name">{{product.get_name()}}</h3>
+      <div class = "price">
+        <p>Price: ${{product.get_price()}}</p>
+      </div>
+      <div class = "sub_info">
+        <div class = "colors">
+          <p>Colors: {{product.get_colors()}}</p>
+        </div>
+        <a href="{{ url_for('product_details', prodID=product.get_id()) }}" class = "btn">Details</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% endblock%}

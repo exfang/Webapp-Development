@@ -1,0 +1,82 @@
+{% extends "staff_base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='account_details.css') }}">{% endblock %}
+{% block title %}Delete Accounts | The Hoop Llab{% endblock %}
+
+    {% block content %}
+<div class='staff_delete'style="min-height: 77vh;">
+    <h1 class="display-4">Delete Users</h1>
+    <div>
+      {% if count == 0 %}
+      <p>There are no users.</p>
+      {% elif count == 1 %}
+      <p>There is 1 user.</p>
+      {% else %}
+      <p>There are {{ count }} users.</p>
+      {% endif %}
+    </div>
+
+    <div>
+      <table class="table table-striped">
+        <thead class="table_head">
+          <tr>
+            <th>User ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for user in users_list %}
+          <tr class="table_row">
+            <td>{{ user.get_user_id() }}</td> <!-- Double curly bracket means print statement-->
+            <td>{{ user.get_first_name() }}</td>
+            <td>{{ user.get_last_name() }}</td>
+            <td>{{ user.get_email() }}</td>
+
+            <td>
+              <form action="{{url_for('StaffDeleteAccounts', id=user.get_user_id())}}" method="POST">
+                <div class="modal_div">
+                    <!-- <input type="submit" value="Delete" class="btn btn-danger" onclick = "return confirm('Are you sure you want to delete {# user.get_first_name() #} {# user.get_last_name() #}?');">-->
+                    <!-- even if you comment a server-side script text with <!- --> <!-- , it will still run. to prevent it from running, change the server-side script text format to comments {# user.get_first_name() #}-->
+
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-danger staff_first_delete_button" data-toggle="modal" data-target="#myModal_{{user.get_user_id()}}">
+                  Delete Account
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal_{{user.get_user_id()}}">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="staff-modal-title">Delete Confirmation</h4>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        Are you sure you want to delete {{user.get_first_name()}} {{user.get_last_name()}}'s account?
+                      </div>
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <input type="submit" value="Delete" class="staff_delete_button btn btn-danger">
+                        <button type="button" class="staff_delete_button btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+               </div>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

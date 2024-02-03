@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Feedback Page{% endblock %}
+{% block content %}
+{% from "includes/_formHelper.html" import render_field %}
+
+<h1 class="display-4">Feedback Form</h1>
+
+<div class="Container_feedback">
+<h2 class="feedback_2">We value your feedback</h2>
+<h3 class="feedback_3">Please complete the feedback form and<br> help us improve our customer experience!</h3>
+</div>
+
+<form method="POST" action="">
+  <div class="form-group">
+    {{ render_field(form.skye_first_name, class="form-control") }}
+  </div>
+
+  <div class="form-group">
+    {{ render_field(form.skye_last_name, class="form-control") }}
+  </div>
+
+  <div class="form-group">
+    {{ render_field(form.skye_RateProd, class="form-check", style="list-style-type:none") }}
+  </div>
+
+  <div class="form-group">
+    {{ render_field(form.skye_RatePrice, class="form-check", style="list-style-type:none") }}
+  </div>
+
+  <div class="form-group">
+    {{ render_field(form.skye_RateDel, class="form-check", style="list-style-type:none") }}
+  </div>
+
+  <div class="form-group">
+    {{ render_field(form.skye_email, class="form-control") }}
+  </div>
+
+  <div id="prof">
+    <div class="form-group">
+      {{ render_field(form.skye_remarks, class="form-control") }}
+    </div>
+  </div>
+  <input type="submit" value="Submit" class="btn btn-primary"/>
+</form>
+
+<style>
+
+.Container_feedback{
+width:100%;
+padding:15px;
+margin:0;
+background-color:orange;
+text-align:center;
+
+}
+
+.display-4{
+text-align:center;
+padding-bottom: 10px;
+padding-top: 10px;
+}
+
+.form-group{
+font-size:15px;
+}
+</style>
+{% endblock %}

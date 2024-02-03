@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='deliverymain.css') }}">
+{% endblock %}
+{% block title %}Delivery & Shipping{% endblock %}
+
+{% block content %}
+
+<h1 class="shipping_title">Delivery & Return</h1>
+<hr><br>
+<h2 class="acc_title_23">Dispatch & Delivery:</h2>
+
+
+<p class = "deliverypara">
+         <a href="delivery1" class="account_basics_hover">How do i get free delivery on Hoopllab?</a><br>
+        <a href="delivery2" class="account_basics_hover">What are Hoopllab's delivery options?</a> <br>
+    <a href="delivery3" class="account_basics_hover">Can my Hoopllab order be dispatched internationally?</a><br>
+      </p>
+
+
+<hr>
+<br>
+<h2 class="acc_title_33">Returns:</h2><br>
+
+<p class = "deliverypara">
+    <a href="delivery4" class="account_basics_hover">How do i return my Hoopllab order?</a><br>
+    <a href="delivery5" class="account_basics_hover">what is Hoopllab's return policy?</a><br>
+</p>
+
+
+
+    {# endfor #}
+
+
+{% endblock %}

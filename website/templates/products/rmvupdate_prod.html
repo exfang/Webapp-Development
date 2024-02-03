@@ -1,0 +1,58 @@
+{% extends "staff_base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='products.css') }}">
+{% endblock %}
+{% block title %}Staff | Update/ Delete Products {% endblock %}
+
+{% block content %}
+<h1 class="display-4">Edit Products</h1>
+<div>
+    {% if count == 0 %}
+    <p>No products added.</p>
+    {% else %}
+    <p>There are {{ count }} products.</p>
+    {% endif %}
+</div>  
+<div>
+  <table class="prod_table">
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Category</th>
+        <th>Colors</th>
+        <th style = "padding-right: 100px">Description</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for product in products_list %}
+        <tr>
+            <td>{{ product.get_id() }}</td>
+            <td>{{ product.get_name() }}</td>
+            <td>{{ product.get_price() }}</td>
+            <td>{{ product.get_stock() }}</td>
+            {% if product.get_category() == "R" %}
+            <td>Regular</td>
+            {% elif product.get_category() == "K" %}
+            <td>Kids</td>
+            {% elif product.get_category() == "C" %}
+            <td>Customised</td>
+            {% endif %}
+            <td>{{ product.get_colors() }}</td>
+            <td>{{ product.get_description()}}</td>
+            <td><a href="/UpdateProduct/{{product.get_id()}}" class="btn_up">Update</a></td>
+            <td>
+              <form action="{{url_for('delete_product', id=product.get_id())}}" method="POST">
+                <input type="submit" value="Delete" class="btn_del" onclick="return confirm('Are you sure you want to delete {{product.get_name()}}?');">
+              </form>
+            </td>
+        </tr>
+        {% endfor %}
+    
+    </tbody>
+  </table>
+</div>
+{% endblock %}

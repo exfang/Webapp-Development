@@ -1,0 +1,30 @@
+.billingpara{
+font-size: 40px;
+padding-left:50px;
+padding-bottom:30px;
+color: #FFA62F;
+
+}
+
+.account_basics_hover:hover {
+    color: #FFA62F;
+}
+
+.billing_title{
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    padding-top: 90px;
+
+}
+.acc_title_22 {
+font-size: 40px;
+padding-left:50px;
+text-decoration: underline;
+}
+
+.acc_title_32{
+font-size:40px;
+padding-left:50px;
+text-decoration: underline;
+}

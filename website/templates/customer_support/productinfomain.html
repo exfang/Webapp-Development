@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='productinfomain.css') }}">
+{% endblock %}
+{% block title %}Product Information{% endblock %}
+
+{% block content %}
+
+<h1 class="product_title">Product Information</h1>
+<hr><br>
+<h2 class="acc_title_24">Product Information:</h2>
+
+<p class="productinfopara">
+         <a href="prodin1" class="account_basics_hover">Does Hoopllab's products have a warranty?</a><br><br>
+        <a href="prodin2" class="account_basics_hover">What is Hoopllab's product warranty policy?</a> <br>
+
+      </p>
+
+
+    {# endfor #}
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+.deliverypara{
+font-size: 40px;
+padding-left:50px;
+padding-bottom:30px;
+color: #FFA62F;
+}
+
+.account_basics_hover:hover {
+    color: #FFA62F;
+}
+
+.shipping_title{
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    padding-top: 90px;
+}
+.acc_title_23 {
+font-size: 40px;
+padding-left:50px;
+text-decoration: underline;
+}
+
+.acc_title_33{
+font-size:40px;
+padding-left:50px;
+text-decoration: underline;
+}

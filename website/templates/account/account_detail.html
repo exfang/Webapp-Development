@@ -1,0 +1,63 @@
+{% if session['acc_type'] == "Customer" %}
+    {% extends "base.html" %}
+{% elif session['acc_type'] == "Staff" %}
+    {% extends "staff_base.html" %}
+{% endif %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='account_details.css') }}">{% endblock %}
+{% block title %}Account Details | The Hoop Llab{% endblock %}
+
+{% block content %}
+{% if 'user_updated' in session %}
+    <div class="alert alert-warning alert-dismissible custom_design">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2>{{ session.pop('user_updated', None) }} was updated.</h2>
+    </div>
+{% endif %}
+{% if 'user_loggedin' in session %}
+    <div class="alert alert-warning alert-dismissible custom_design">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2 class="welcome_alert_text">Welcome, {{ session.pop('user_loggedin', None) }}.</h2>
+    </div>
+{% endif %}
+<div class='signup'>
+    {% if session['acc_type'] == "Customer" %}
+    <div class="signup_bg">
+    {% elif session['acc_type'] == "Staff" %}
+    <div class="signup_bg" style="width: 100%">
+    {% endif %}
+
+    {% from "includes/add_ProdForm.html" import render_field %}
+        <h1 class="display-4">Account Details</h1>
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.first_name, class="form-control capitalize") }}
+            </div>
+             <div class="form-group">
+                {{ render_field(form.last_name, class="form-control capitalize") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.email, class="form-control capitalize") }}
+            </div>
+            <div class="form-group">
+                <a href="/reset_password" class="reset_password_link">
+                    <div class="reset_password_button">
+                    <div>Reset Password</div>
+                    <div>&rarr; </div>
+                    </div>
+                </a>
+            </div>
+            <div class="form-group">
+                <a href="/customer_delete_account" class="reset_password_link">
+                    <div class="reset_password_button">
+                    <div>Delete Account</div>
+                    <div>&rarr; </div>
+                    </div>
+                </a>
+            </div>
+
+            <input type="submit" value="Save Changes" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

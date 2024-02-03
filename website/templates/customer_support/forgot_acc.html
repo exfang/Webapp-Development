@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='forgot_acc.css') }}">
+{% endblock %}
+{% block title %}Forgot My Hoopllab Account Login{% endblock %}
+
+{% block content %}
+
+<h1 class="forgotacc_title">Forgot Hoopllab Account Login</h1>
+<hr><br>
+<h2 class="acc_title_2">Log-in Help:</h2>
+
+<p class = " account_para">
+   1.  Search every email account you use for the word "Hoopllab" to find any emails we've sent you.<br>
+    2. Enter all email addresses you use into our password reset form. If the email address you entered is associated with a Grammarly account, you’ll receive an email with further details.
+
+      </p>
+<hr>
+<br>
+
+    {# endfor #}
+
+
+{% endblock %}

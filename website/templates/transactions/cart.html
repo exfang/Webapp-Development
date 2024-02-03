@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='cart.css') }}">{% endblock %}
+{% block title %}Cart{% endblock %}
+
+
+{% block content %}
+<h1 class = "title"> Shopping Cart </h1>
+
+<div class = "item-count">
+    {% if count == 0 %}
+    <p>There are no items.</p>
+    {% elif count == 1 %}
+    <p>There is 1 item.</p>
+    {% else %}
+    <p>There are {{ count }} items.</p>
+    {% endif %}
+</div>
+{% if count != 0 %}
+<div class = "container-container">
+  <div class = "summary-container">
+    <h2 class = "summary-title">Order Summary</h2>
+    <hr>
+    <div class = "summary-details">
+      <pre> Total items:                    {{ count }}</pre>
+      <pre> Subtotal:                     ${{ total }}</pre>
+    </div>
+    <hr>
+    <a href = "/cart_payment" class = "vertical-center">
+      <button class = "btn">Move to details</button>
+    </a>
+  </div>
+</div>
+{% endif %}
+<div>
+<br>
+<br>
+<br>
+  {% for product in cart_list %}
+  <div class = "cart-container">
+    <div>
+      <img src = "{{ url_for('static', filename='images/'+ product.get_image())}}" class="item-img">
+    </div>
+    <div class = "product-info">
+      <p class = "product-name">{{ product.get_name() }}</p>
+      <p>{{ product.get_size() }}</p>
+      <p>{{ product.get_category() }}</p>
+      <p>{{ product.get_colors() }}</p>
+    </div>
+    <div>
+      <p class = "product-price">${{ product.get_price() }}</p>
+    </div>
+    <div>
+      <form action="{{url_for('delete_item', itemid = product.get_id())}}" method="POST">
+        <button class = "btn1">
+          <i class = "fa fa-close"></i>
+        </button>
+      </form>
+    </div>
+    <hr>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

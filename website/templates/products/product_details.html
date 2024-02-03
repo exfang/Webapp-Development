@@ -1,0 +1,99 @@
+<!--only guest & cust can access -->
+{% if session['acc_type'] == "Customer" %}
+{% extends "base.html" %}
+{% else %}
+{% extends "guest_base.html" %}
+{% endif %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='products.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='prod_single.css') }}">
+<link rel = "stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+{% endblock %}
+{% block title %}Staff | {{product.get_name()}} Details {% endblock %}
+
+{% block content %} 
+<div class="container">
+  <div class="heading-section">
+      <h2>Product Details</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+  <div id="thumb" class="owl-carousel product-thumb">
+    <div class="item">
+      <img src = "{{ url_for('static', filename='images/'+ product.get_image())}}" class="img-responsive">
+    </div>
+  </div>
+    </div>
+    <div class="col-md-6">
+      <div class="product-dtl">
+        <div class="product-info">
+          <div class="product-name">{{product.get_name()}}</div>
+          <div class="reviews-counter">
+          <div class="category">
+            {% if product.get_category() == "C" %}
+            <span>Customised</span>
+            {% elif product.get_category() == "R" %}
+            <span>Regular</span>
+            {% elif product.get_category() == "K" %}
+            <td>Kids</td>
+            {% endif %}
+          </div>
+      </div>
+        <div class="product-price"><span>${{ product.get_price() }}</span></div>
+        </div>
+        <p>Description: {{product.get_description()}}</p>
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Size</h5>
+        <p>{{product.get_size()}}</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Color</h5>
+            <p>{{product.get_colors()}}</p>
+          </div>
+          
+        </select>
+          </div>
+          <div class="product-count">
+            <form action="{{url_for('get_id', prodID = product.get_id())}}" method = "POST">
+              <button class="btn">Add to Cart</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class = "recommend">
+  <h2>Find More Basketballs!</h2>
+</div>
+<div class="slide-container swiper">
+  <div class="slide-content">
+      <div class="card-wrapper swiper-wrapper">
+        {% for product in products_list %}
+          <div class="card swiper-slide">
+              <div class="image-content">
+                  <span class="overlay"></span>
+                  <div class="card-image">
+                    <img src = "{{ url_for('static', filename='images/'+ product.get_image())}}" class="img-responsive">
+                  </div>
+              </div>
+              <div class="card-content">
+                  <h2 class="name">{{product.get_name()}}</h2>
+                  <p class="description">{{product.get_description()}}</p>
+                  <a href="{{ url_for('product_details', prodID=product.get_id()) }}" class = "button">View More</a>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+  </div>
+    <div class="swiper-button-next swiper-navBtn"></div>
+    <div class="swiper-button-prev swiper-navBtn"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+{% endblock %}

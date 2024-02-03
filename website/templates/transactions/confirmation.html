@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='confirmation.css') }}">
+{% endblock %}
+{% block title %}Confirm{% endblock %}
+
+{% block content %}
+<div class = "conf-container" style = "height: 60rem">
+    <div>
+        <p>Transaction was made on {{ date_today }}</p>
+        <p>Payment has been made Receipt and Confirmation has been sent to your mail</p>
+    </div>
+    <div>
+        <img src = "{{ url_for('static', filename='images/' + 'mailimg.png') }}" style = "width:20%;">
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% if session['acc_type'] == "Customer" %}
+{% extends "base.html" %}
+{% elif session['acc_type'] == "Staff" %}
+{% extends "staff_base.html" %}
+{% else %}
+{% extends "guest_base.html" %}
+{% endif %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='homepg.css') }}">
+{% endblock %}
+{% block title %}Home | The Hoop Llab{% endblock %}
+
+{% block content %}
+<section class="home" id="home">
+    <div class="slide-container active">
+        <div class="slide">
+            <div class="content">
+                <span>Welcome to</span>
+                <h3>The Hoop Llab{% if session['first_name'] %}, <span style="color: #FEB968; font-size: 5rem">{{session['first_name']}}</span>{% endif %}</h3>
+                <p><strong>B<i class="fa-solid fa-basketball fa-bounce"></i>UNCE</strong> to your Doorstep with Balls <strong>ONE CLICK</strong> Away</p>
+                <a href="#products" class="btn">Let's Shop!</a>
+            </div>
+            <div class="image">
+                <img src="{{ url_for('static', filename='images/hmpgg.png') }}" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products" id="products">
+
+    <h1 class="heading"> Categories </h1>
+
+    <div class="box-container">
+
+        <div class="boxx">
+            <img src="{{ url_for('static', filename='images/wtb1100pdqnbablk_2-removebg-preview.png') }}" alt="">
+            <div class="content">
+                <h3>Regular</h3>
+                <a href="/View-RegularProducts" class="btn">Shop Now!</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/wz3008101id3str-removebg-preview.png') }}" alt="">
+            <div class="content">
+                <h3>Kids</h3>
+                <a href="/View-KidsProducts" class="btn">Shop Now!</a>
+            </div>
+        </div>
+
+        <div class="boxx">
+            <img src="{{ url_for('static', filename='images/wtb1100pdqmil_1-removebg-preview.png') }}" alt="">
+            <div class="content">
+                <h3>Customised</h3>
+                <a href="/View-CustomProducts" class="btn">Shop Now!</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% if session['acc_type'] == "Guest" and session['forgot_password_allowed'] %}
+{% extends "guest_base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='login_signup.css') }}">{% endblock %}
+{% block title %}Forgot Password{% endblock %}
+
+{% block content %}
+{% if 'reset' in session %}
+    <div class="alert alert-warning alert-dismissible custom_design">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2 style="text-align: center;">{{ session.pop('reset', None) }}</h2>
+    </div>
+{% endif %}
+<div class='signup'>
+
+    <div class="signup_bg">
+    {% from "includes/add_ProdForm.html" import render_field %}
+        <div class="signup_image"><img src = "./static/images/Group 1.png" alt = ""></div>
+
+        <h1 class="display-4" style="margin-bottom: 2rem !important;">Email Verification</h1>
+        <h2 style="text-align: center;">Please enter the 6 digit OTP code sent to your email.</h2>
+        <h2 style="text-align: center; margin-bottom: 3rem;">Please check your spam folders if necessary.</h2>
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.otp, class="form-control capitalize") }}
+            </div>
+            {% with messages = get_flashed_messages(category_filter=["confirmpassworderror"]) %}
+            {% if messages %}
+                <div class="reset_flashes">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+                </div>
+            {% endif %}
+            {% endwith %}
+            <input type="submit" value="Submit Code" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+{% else %}
+{% include 'home.html' %}
+{% endif %}

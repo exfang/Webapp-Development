@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='account_details.css') }}">{% endblock %}
+{% block title %}Delivery Details | The Hoop Llab{% endblock %}
+
+{% block content %}
+{% if 'user_updated' in session %}
+    <div class="alert alert-warning alert-dismissible custom_design">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2>{{ session.pop('user_updated', None) }}</h2>
+    </div>
+{% endif %}
+
+<div class='signup'>
+    <div class="signup_bg">
+    {% from "includes/add_ProdForm.html" import render_field %}
+        <h1 class="display-4">Delivery Details</h1>
+
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.recipient_name, class="form-control capitalize") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.address, class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.unit_number, class="form-control") }}
+                <h3>Example: #01-123. If you have no unit number, please enter 0.</h3>
+            </div>
+
+
+            <div class="form-group">
+                {{ render_field(form.postal_code, class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.phone_number, class="form-control") }}
+            </div>
+            <input type="submit" value="Move to Credit Details" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

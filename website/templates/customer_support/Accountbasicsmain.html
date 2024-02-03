@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='accountbasicsmain.css') }}">
+{% endblock %}
+{% block title %}Account Basics{% endblock %}
+
+{% block content %}
+
+<h1 class="accountbasic_title">Account Basics</h1>
+<hr><br>
+<h2 class="acc_title_2">Log-in Help:</h2><br>
+
+<p class="accountbasicsparag">
+    <a href="forgot_acc" class="account_basics_hover">Forgot my Hoopllab Account login</a><br>
+    <a href="forgot_acc2" class="account_basics_hover">Your password is incorrect or this account does not exist</a> <br>
+    <a href="forgot_acc3" class="account_basics_hover">I did not receive emails from Hoopllab. What do I do?</a><br>
+    <a href="forgot_acc4" class="account_basics_hover">I've requested a password reset, but i haven't received an email yet</a><br>
+    <a href="forgot_acc5" class="account_basics_hover">I cannot log in with my correct login details</a><br>
+      </p>
+<hr>
+<br>
+<h2 class="acc_title_3">Update Account:</h2><br>
+<p class="accountbasicsparag">
+    <a href="forgot_acc6" class="account_basics_hover">I need to change my email address</a><br>
+    <a href="forgot_acc7" class="account_basics_hover">I need to change my password</a><br>
+    <a href="forgot_acc8" class="account_basics_hover">I signed up with the wrong email</a><br>
+</p>
+
+    {# endfor #}
+
+
+{% endblock %}

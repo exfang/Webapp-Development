@@ -1,0 +1,11 @@
+.conf-container{
+    width: 60%;
+    background-color:#C5D8E9;
+    border: 0.1rem solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20rem;
+    margin-bottom:30rem;
+    text-align: center;
+    font-size: 6rem;
+}

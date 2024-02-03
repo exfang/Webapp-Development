@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='cust_report.css') }}">
+{% endblock %}
+{% block title %}{{session['first_name']}} | Dashboard {% endblock %}
+    
+{% block content %}
+<div class="alert alert-warning alert-dismissible specials">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h1>Monthly Special: </h1><h2> Baller</h2>
+</div>
+    <div class = "cust-title2">
+        <h1>{{session['first_name']}}'s Dashboard</h1>
+    </div>
+    
+    <div class = "cust-cardBox">
+        <div class = "cust-card">
+        <div>
+            <div class = "cust-numbers">{{topcat}}</div>
+            <div class = "cust-cardName">Most bought Category</div>
+        </div>
+        <div class = "cust-iconBx">
+            <ion-icon name="basketball-outline"></ion-icon>
+        </div>
+        </div>
+        <div class = "cust-card">
+        <div>
+            <div class = "cust-numbers">{{total_trans}}</div>
+            <div class = "cust-cardName">Total Transaction</div>
+        </div>
+        <div class = "cust-iconBx">
+            <ion-icon name="card-outline"></ion-icon>
+        </div>
+        </div>
+        <div class = "cust-card">
+            <div>
+            <div class = "cust-numbers">${{total_spent}}</div>
+            <div class = "cust-cardName">Total Spent</div>
+            </div>
+            <div class = "cust-iconBx">
+            <ion-icon name="cash-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+    <div class = "cust-trans">
+        <div class = "cust-card">
+            <div>
+                <div class = "title">Monthly Spending</div>
+                <div class = "cust_spend">
+                    <img src="data:image/png;base64, {{ plot_month_spend }}" height="360" width="560">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends "staff_base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='stf-report.css') }}">
+{% endblock %}
+{% block title %}Staff | Store Overview{% endblock %}
+
+{% block content %}
+{% if 'user_loggedin' in session %}
+    <div class="alert alert-warning alert-dismissible custom_design">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2 class="welcome_alert_text">Welcome, {{ session.pop('user_loggedin', None) }}.</h2>
+    </div>
+{% endif %}
+<div class = "stf-title">
+    <h1>Store Overview</h1>
+  </div>
+
+  <!-- cards -->
+  <div class = "stf-cardBox">
+    <div class = "stf-card">
+      <div>
+        <div class = "stf-numbers">{{signup}}</div>
+        <div class = "stf-cardName">Total Sign-Ups</div>
+      </div>
+      <div class = "stf-iconBx">
+        <ion-icon name="person-add-outline"></ion-icon>
+      </div>
+    </div>
+    <div class = "stf-card">
+      <div>
+        <div class = "stf-numbers">${{sales}}</div>
+        <div class = "stf-cardName">Total Sales</div>
+      </div>
+      <div class = "stf-iconBx">
+        <ion-icon name="cash-outline"></ion-icon>
+      </div>
+    </div>
+    <div class = "stf-card">
+      <div>
+        <div class = "stf-numbers">{{trans}}</div>
+        <div class = "stf-cardName">Total Transactions</div>
+      </div>
+      <div class = "stf-iconBx">
+        <ion-icon name="card-outline"></ion-icon>
+      </div>
+    </div>
+    <div class = "stf-card">
+      <div>
+          <div class = "stf-numbers">{{sales_to_target}}% </div>
+        <div class = "stf-cardName">Sales to Target</div>
+      </div>
+      <div class = "stf-iconBx">
+        {%if sales_to_target <= 80%}
+        <ion-icon name="caret-down-outline" style = "color: red"></ion-icon>
+        {%elif sales_to_target <= 100%}
+        <ion-icon name="caret-down-outline" style = "color: #ff8c00"></ion-icon>
+        {%else%}
+        <ion-icon name="caret-up-outline" style = "color: green"></ion-icon>
+        {%endif%}
+      </div>
+    </div>
+  </div>
+
+  <div class = "stf-graphbox">
+     <div class = "stf-card">
+      <div>
+        <div class = "title">Daily Traffic</div>
+        <div class = "daily_traffic">
+          <img src="data:image/png;base64, {{ plot_daily_traffic }}" height="450" width="450">
+        </div>
+     </div>
+    </div>
+     <div class = "stf-card">
+      <div>
+        <div class = "title">Latest Transactions</div>
+        <div class = "latest_transaction">
+          <table class="stfTrans_table">
+              <thead>
+                <tr>
+                  <th>Trans ID</th>
+                  <th>Name</th>
+                  <th style = "padding-right: 60px">Date</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+          <tbody>
+            {% for transaction in trans_list| reverse %}
+              <tr>
+                  <td>{{ transaction.get_trans_id() }}</td>                
+                  <td>{{ trans_name[transaction.get_user_id()]}}</td>                  
+                  <td>{{ transaction.get_trans_date() }}</td>
+                  <td>${{ transaction.get_amount_spent() }}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+          </table>
+      </div>
+      </div>
+  </div>
+
+{% endblock %}
+

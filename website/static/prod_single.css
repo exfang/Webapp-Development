@@ -1,0 +1,259 @@
+.pd-wrap {
+	padding: 40px 0;
+	font-family: 'Poppins', sans-serif;
+}
+.heading-section {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.sub-heading {
+	font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.heading-section h2 {
+	font-size: 40px;
+    font-weight: 750;
+    padding-top: 10px;
+	margin-top: 5rem;
+    padding-bottom: 15px;
+	font-family: 'Poppins', sans-serif;
+}
+.item img {
+	width: 38rem;
+	margin: auto;
+	position: relative;
+	top: -8rem;
+	left:20%
+}
+.item{
+	margin: auto;
+	justify-content: center;
+}
+.product-name {
+	font-size: 40px;
+	font-weight: 500;
+	line-height: 22px;
+	margin-bottom: 20px;
+}
+.product-price {
+	font-size: 30px;
+    font-weight: 400;
+    padding: 10px 0;
+    clear: both;
+}
+.category{
+	font-size: 20px;
+	margin-top: -1rem;
+	clear: both;
+}
+p{
+	font-size: 20px;
+	clear: both;
+	padding: 0;
+}
+
+h5{
+	font-size: 20px;
+	clear: both;
+	padding: 0;
+	font-weight: bold;
+}
+.display-flex {
+	display: flex;
+}
+.align-center {
+	align-items: center;
+}
+.product-info {
+	width: 100%;
+	margin-top: 2rem;
+}
+
+.container{
+    margin-top: 100rem;
+    background-color: #c5d8e9;
+    border-radius: 2rem;
+}
+
+.container .btn{
+	position: relative;
+	left: -.7rem;
+	font-size: 2.5rem ;
+}
+
+.recommend{
+	margin-top: 6rem;
+	position: relative;
+	text-align: center;
+}
+
+.recommend h2{
+	font-size: 3.5rem;
+	font-weight: bold;
+}
+.stf-navigation{
+	font-size: 1.8rem;
+}
+.dropdown-container a{
+    margin-top: .5rem;
+    text-decoration: underline;
+    font-size: 1.1rem;
+  }
+/*slider*/
+
+.slide-container{
+	margin-bottom: 4rem;
+	margin-top: 2rem;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1120px;
+	width: 100%;
+	padding: 40px 0;
+  }
+  .slide-content{
+	margin: 0 40px;
+	overflow: hidden;
+	border-radius: 25px;
+	height: 40rem;
+  }
+
+  .swiper {
+	width: 100%;
+	height: 100%;
+  }
+  
+  .card{
+	border-radius: 25px;
+	background-color: #c5d8e9;
+  }
+  .image-content,
+  .card-content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px 14px;
+  }
+  .image-content{
+	position: relative;
+	row-gap: 5px;
+	padding: 25px 0;
+	height: 18rem;
+	text-align: center;
+  }
+  .overlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 18rem;
+	width: 100%;
+	background-color: var(--orange);
+	border-radius: 25px 25px 0 25px;
+  }
+  .overlay::before,
+  .overlay::after{
+	content: 18rem;
+	position: absolute;
+	right: 0;
+	bottom: -40px;
+	height: 40px;
+	width: 40px;
+	background-color: var(--orange);
+  }
+  .overlay::after{
+	border-radius: 0 25px 0 0;
+	background-color: #c5d8e9;
+  }
+  .card-image{
+	position: relative;
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	background: none;
+	padding: 3px;
+	margin: auto;
+  }
+  .card-image .card-img{
+	height: 80rem;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 4px solid var(--orange);
+	margin: auto;
+  }
+  .name{
+	font-size: 18px;
+	font-weight: 500;
+	color: #333;
+  }
+  .description{
+	font-size: 14px;
+	color: #707070;
+	text-align: center;
+  }
+  .button{
+	border: none;
+	font-size: 16px;
+	color: white;
+	padding: 8px 16px;
+	background-color: #0F4C81;
+	border-radius: 6px;
+	margin: 14px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-decoration: none;
+  }
+  .button:hover{
+	background: var(--orange);
+	color: black;
+	text-decoration: none;
+  }
+  .card-image img{
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	position: relative;
+	align-items: center;
+  }
+  .swiper-navBtn{
+	color: #0F4C81;
+	transition: color 0.3s ease;
+  }
+  .swiper-navBtn:hover{
+	color: #0F4C81;
+  }
+  .swiper-navBtn::before,
+  .swiper-navBtn::after{
+	font-size: 35px;
+  }
+  .swiper-button-next{
+	right: 0;
+  }
+  .swiper-button-prev{
+	left: 0;
+  }
+  .swiper-pagination-bullet{
+	background-color: #0F4C81;
+	opacity: 1;
+  }
+  .swiper-pagination-bullet-active{
+	background-color: #0F4C81;
+  }
+
+  @media screen and (max-width: 768px) {
+	.slide-content{
+	  margin: 0 10px;
+	}
+	.swiper-navBtn{
+	  display: none;
+	}
+	.item img{
+		margin: auto;
+	}
+  }
+/*end of slider*/  

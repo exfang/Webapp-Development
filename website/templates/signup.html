@@ -1,0 +1,64 @@
+{% extends "guest_base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='login_signup.css') }}">{% endblock %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class='signup'>
+    <div class="signup_bg signup_form_bg">
+    {% from "includes/add_ProdForm.html" import render_field %}
+        <div class="signup_image"><img src = "./static/images/Group 1.png" alt = ""></div>
+
+        <h1 class="display-4" style="margin-bottom: 0;">Become a Hoop Llab Member</h1>
+        <h4 style="text-align: center;">Create your Hoop Llab member profile</h4>
+        <h4 style="text-align: center;">and get promotion codes</h4>
+        <h4 style="text-align: center;">to our products.</h4>
+
+        <form method="POST" action="">
+          <div class="form-group">
+
+            {{ render_field(form.first_name, class="form-control capitalize") }}
+          </div>
+          <div class="form-group">
+            {{ render_field(form.last_name, class="form-control capitalize") }}
+          </div>
+          <div class="form-group">
+            {{ render_field(form.email, class="form-control capitalize") }}
+          </div>
+            {% with messages = get_flashed_messages(category_filter=["emailexists"]) %}
+            {% if messages %}
+                <div class="flash">
+                {% for message in messages %}
+                    {{ message }}
+                    <a href="/login">Login.</a>
+                {% endfor %}
+                </div>
+            {% endif %}
+            {% endwith %}
+          <div class="form-group">
+            {{ render_field(form.password, class="form-control") }}
+          </div>
+            <div class="form-group">
+            {{ render_field(form.confirm_password, class="form-control") }}
+          </div>
+            {% with messages = get_flashed_messages(category_filter=["confirmpassword"]) %}
+            {% if messages %}
+                <div class="flash">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+                </div>
+            {% endif %}
+            {% endwith %}
+          <input type="submit" value="Join Us" class="btn btn-primary"/>
+          <div class="form-signup">
+              Already a member? <a href="/login">Log In.</a>
+          </div>
+        </form>
+    </div>
+</div>
+<!-- if you check for user="staff", the view.py must return user="staff" in render_template() function -->
+<!-- add css to the base.html/ guest_base.html -->
+<!-- use !important to overwrite bootstrap -->
+
+{% endblock %}

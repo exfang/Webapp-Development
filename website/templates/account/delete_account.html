@@ -1,0 +1,42 @@
+{% if session['acc_type'] == "Customer" %}
+{% extends "base.html" %}
+{% elif session['acc_type'] == "Staff" %}
+{% extends "staff_base.html" %}
+{% endif %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='account_details.css') }}">{% endblock %}
+{% block title %}Delete Account | The Hoop Llab{% endblock %}
+
+{% block content %}
+{% if 'user_updated' in session %}
+    <div class="alert alert-warning alert-dismissible custom_design">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2>{{ session.pop('user_updated', None) }}</h2>
+    </div>
+{% endif %}
+
+<div class='signup'>
+    <div class="signup_bg">
+    {% from "includes/add_ProdForm.html" import render_field %}
+        <h1 class="display-4">Delete Account</h1>
+
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.password, class="form-control") }}
+            </div>
+             <div class="form-group">
+                {{ render_field(form.confirm_password, class="form-control") }}
+            </div>
+              {% if messages %}
+                <div class="flashes">
+                {% for message in messages %}
+                  {{ message }}
+                {% endfor %}
+                </div>
+              {% endif %}
+            <input type="submit" value="Next: Authentication" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

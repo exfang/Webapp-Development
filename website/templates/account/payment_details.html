@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='account_details.css') }}">{% endblock %}
+{% block title %}Payment Details | The Hoop Llab{% endblock %}
+
+{% block content %}
+{% if 'user_updated' in session %}
+    <div class="alert alert-warning alert-dismissible custom_design">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2>{{ session.pop('user_updated', None) }}</h2>
+    </div>
+{% endif %}
+
+<div class='signup'>
+    <div class="signup_bg">
+    {% from "includes/add_ProdForm.html" import render_field %}
+        <h1 class="display-4">Payment Details</h1>
+
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.name_on_card, class="form-control capitalize") }}
+            </div>
+             <div class="form-group">
+                {{ render_field(form.card_number, class="form-control") }}
+                 <h3>Only accepts card with 13-19 digits</h3>
+            </div>
+            <div class="form-group">
+                {{ render_field(form.cvv, class="form-control") }}
+                <h3>Only accepts CVV with 3 to 4 characters</h3>
+            </div>
+            <div class="form-group">
+                {{ render_field(form.expiry, class="form-control") }}
+            </div>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class="flashes">
+                {% for message in messages %}
+                  {{ message }}
+                {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+            <input type="submit" value="Save Changes" class="btn btn-primary"/>
+        </form>
+        <form action="{{url_for('CustomerDeletePayment', id=session['user_id'])}}" method="POST">
+        <div class="modal_div">
+            <!-- <input type="submit" value="Delete" class="btn btn-danger" onclick = "return confirm('Are you sure you want to delete {# user.get_first_name() #} {# user.get_last_name() #}?');">-->
+            <!-- even if you comment a server-side script text with <!- --> <!-- , it will still run. to prevent it from running, change the server-side script text format to comments {# user.get_first_name() #}-->
+
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal_{{session['user_id']}}">
+          Delete Payment Details
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal_{{session['user_id']}}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="customer-modal-header">
+                <h4 class="modal-title">Delete Details Confirmation</h4>
+              </div>
+
+              <!-- Modal body -->
+              <div class="customer-texts modal-body">
+                Are you sure you want to delete your Payment Details?
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <input type="submit" value="Delete" class="customer-confirm-buttons staff_delete_button btn btn-danger">
+                <button type="button" class="customer-confirm-buttons staff_delete_button btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+       </div>
+      </form>
+    </div>
+</div>
+{% endblock %}
+

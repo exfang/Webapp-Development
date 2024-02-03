@@ -1,0 +1,90 @@
+.payment_title{
+    font-weight: bold;
+    font-size:6rem;
+}
+.daboxes{
+    text-align:left;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+.img_in_payment{
+    padding-right:3rem;
+    padding-bottom:3rem;
+    float: left;
+}
+.details_in_payment{
+    text-align:left;
+    font-size: 1.5rem;
+}
+.name_in_payment{
+    font-size: 2rem;
+}
+
+.button-container{
+    float:right;
+}
+.price_in_payment{
+    font-size: 2rem;
+}
+.whole-container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10rem;
+    background-color:#C5D8E9;
+    border: 0.1rem solid black;
+}
+.container_yes{
+    align-items: center;
+    width: 80%;
+}
+.payment-container{
+    margin-left: 10rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.promocode-sect{
+    width:80%;
+    margin-left: 10rem;
+}
+.btn1{
+    margin-top: 0rem;
+    border-radius: .5rem;
+    border:.4rem solid #0F4C81;
+    font-size: 2rem;
+    color:#fff;
+    cursor: pointer;
+    background:#0F4C81;
+}
+.btn2{
+    border-radius: .5rem;
+    border:.4rem solid #0F4C81;
+    font-size: 2rem;
+    color:#fff;
+    cursor: pointer;
+    background:#0F4C81;
+}
+.btn1:hover{
+    background:var(--orange);
+    color: var(--black-color);
+    border:.4rem solid var(--orange);
+}
+.btn2:hover{
+    background:var(--orange);
+    color: var(--black-color);
+    border:.4rem solid var(--orange);
+}
+.promocode-sect{
+    font-size: 3rem;
+}
+.form-control{
+    font-size: 2rem !important;
+}
+
+.form-group{
+    font-size: 2rem !important;
+    padding:0rem !important;
+}

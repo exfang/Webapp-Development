@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='forgot_acc.css') }}">
+{% endblock %}
+{% block title %} Hoopllab Receipt{% endblock %}
+
+{% block content %}
+
+<h1 class="forgotacc15_title">How Do i get a Receipt</h1>
+<hr><br>
+<h2 class="acc_title15_2">Payment Management:</h2>
+
+<p class = " account_para15">
+    1. Once purchased, receipt will be sent to your email. <br><br><br>
+
+      </p>
+<hr>
+<br>
+
+<style>
+    .account_para15{
+    font-size: 30px;
+    padding:30px;
+    margin-bottom:200px;
+    }
+
+.forgotacc15_title{
+font-size:40px;
+padding:15px;
+text-align:center;
+}
+
+    .acc_title15_2 {
+font-size: 35px;
+padding-left:50px;
+margin-bottom:30px;
+text-decoration: underline;
+}
+
+
+</style>
+
+    {# endfor #}
+
+
+{% endblock %}
